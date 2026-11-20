@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #e8ecf1;
+  --surface: #e8ecf1;
+  --text: #2d3748;
+  --muted: #6b7280;
+  --accent: #4f7cff;
+  --shadow-light: #ffffff;
+  --shadow-dark: #c5cad3;
+  --radius: 16px;
+}
+
+.dark {
+  --bg: #2b3040;
+  --surface: #2b3040;
+  --text: #e6ebf5;
+  --muted: #a8b3c7;
+  --accent: #7aa2ff;
+  --shadow-light: #3a4055;
+  --shadow-dark: #1e2230;
+}
+
+body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); transition: background .3s, color .3s; }
+.leaflet-container { height: 320px; border-radius: 12px; }
+
+@layer components {
+  .neu { background: var(--surface); border-radius: var(--radius); box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light); }
+  .neu-inset { background: var(--surface); border-radius: var(--radius); box-shadow: inset 6px 6px 12px var(--shadow-dark), inset -6px -6px 12px var(--shadow-light); }
+  .neu-sm { background: var(--surface); border-radius: 12px; box-shadow: 4px 4px 8px var(--shadow-dark), -4px -4px 8px var(--shadow-light); }
+  .btn-primary { background: var(--accent); color: #fff; font-weight: 600; padding: 10px 20px; border-radius: 12px; box-shadow: 4px 4px 10px var(--shadow-dark), -4px -4px 10px var(--shadow-light); transition: transform .15s, box-shadow .15s; }
+  .btn-primary:hover { transform: translateY(-1px); }
+  .btn-primary:active { box-shadow: inset 3px 3px 6px rgba(0,0,0,.2); transform: translateY(1px); }
+  .btn-primary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .input { background: var(--surface); border: none; border-radius: 12px; padding: 10px 14px; box-shadow: inset 4px 4px 8px var(--shadow-dark), inset -4px -4px 8px var(--shadow-light); color: var(--text); }
+  .input:focus { outline: 2px solid var(--accent); }
+  .chip { background: var(--surface); border-radius: 999px; padding: 6px 14px; box-shadow: 3px 3px 6px var(--shadow-dark), -3px -3px 6px var(--shadow-light); transition: transform .15s; }
+  .chip:hover { transform: translateY(-1px); color: var(--accent); }
+  .card { background: var(--surface); border-radius: var(--radius); box-shadow: 8px 8px 16px var(--shadow-dark), -8px -8px 16px var(--shadow-light); }
+  .fade-in { animation: fadeIn .4s ease-out both; }
+  @keyframes fadeIn { from { opacity:0; transform: translateY(8px);} to { opacity:1; transform: none;} }
+}

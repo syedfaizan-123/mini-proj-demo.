@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: medfinder-api
+    env: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: node src/app.js
+    envVars:
+      - key: PORT
+        value: 10000
